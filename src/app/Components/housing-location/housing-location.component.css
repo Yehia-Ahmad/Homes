@@ -1,6 +1,5 @@
 .listing {
   background: var(--accent-color);
-  cursor: pointer;
   border-radius: 30px;
   padding-bottom: 30px;
 }

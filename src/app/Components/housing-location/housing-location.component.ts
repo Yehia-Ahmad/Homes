@@ -6,14 +6,8 @@ import { Housinglocation } from 'src/app/Models/housinglocation';
   templateUrl: './housing-location.component.html',
   styleUrls: ['./housing-location.component.css'],
 })
-export class HousingLocationComponent implements OnInit {
+export class HousingLocationComponent {
   @Input() housingLocation: Housinglocation;
 
   constructor() {}
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    console.log(this.housingLocation);
-  }
 }
