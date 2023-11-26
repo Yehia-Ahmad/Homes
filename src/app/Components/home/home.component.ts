@@ -9,8 +9,17 @@ import { HousingService } from 'src/app/Services/housing.service';
 })
 export class HomeComponent {
   housingLocationList: Housinglocation[];
+  filteredLocationList: Housinglocation[];
 
   constructor(private housingService: HousingService) {
     this.housingLocationList = this.housingService.getAllHousingLocations();
+    this.filteredLocationList = this.housingLocationList;
+  }
+
+  filterResults(text: string) {
+    this.filteredLocationList = this.housingLocationList.filter(
+      (housingLocation) =>
+        housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }
