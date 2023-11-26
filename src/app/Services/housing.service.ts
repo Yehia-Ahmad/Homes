@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Housinglocation } from '../Models/housinglocation';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HousingService {
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
+  url: string = 'http://localhost:3000/locations';
   housingLocationList: Housinglocation[] = [
     {
       id: 0,
@@ -109,10 +112,10 @@ export class HousingService {
     },
   ];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAllHousingLocations(): Housinglocation[] {
-    return this.housingLocationList;
+  getAllHousingLocations(): Observable<Housinglocation[]> {
+    return this.http.get<Housinglocation[]>(this.url);
   }
 
   getHousingLocationById(id: number): Housinglocation | undefined {
