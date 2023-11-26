@@ -8,7 +8,12 @@ import { HousingLocationComponent } from './Components/housing-location/housing-
 import { DetailsComponent } from './Components/details/details.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HousingLocationComponent, DetailsComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HousingLocationComponent,
+    DetailsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
